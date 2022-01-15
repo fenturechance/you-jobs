@@ -12,19 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START all]
-# [START step_2]
-# [START step_1]
-entrypoint: bundle exec rackup --port $PORT
-env: flex
-runtime: ruby
-# [END step_1]
+# [START cat_routes]
+Rails.application.routes.draw do
+  resources :cats
+  get "cats/index"
 
-env_variables:
-  SECRET_KEY_BASE: e5d30e48aeec1f26396312e442c91478493acae58f596b6d6f2005a5614479f9a19f08eebafe164498aefbaa491a1f3a65107a3c10957a537f18e64d5bbba8bb
-# [END step_2]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "cats#index"
+end
+# [END cat_routes]
 
-beta_settings:
-  cloud_sql_instances: you-jobs:asia-east1:you-jobs-db
-# [END all]
+=begin
+# [START boilerplate]
+Rails.application.routes.draw do
+  resources :cats
+  get 'cats/index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+end
+# [END boilerplate]
+=end

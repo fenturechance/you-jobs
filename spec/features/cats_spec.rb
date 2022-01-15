@@ -1,10 +1,9 @@
-# Copyright 2017 Google, Inc
-#
+# Copyright 2017, Google, Inc.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#    http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,19 +11,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START all]
-# [START step_2]
-# [START step_1]
-entrypoint: bundle exec rackup --port $PORT
-env: flex
-runtime: ruby
-# [END step_1]
+require "rails_helper"
 
-env_variables:
-  SECRET_KEY_BASE: e5d30e48aeec1f26396312e442c91478493acae58f596b6d6f2005a5614479f9a19f08eebafe164498aefbaa491a1f3a65107a3c10957a537f18e64d5bbba8bb
-# [END step_2]
+RSpec.feature "Cat Friends" do
+  fixtures :cats
 
-beta_settings:
-  cloud_sql_instances: you-jobs:asia-east1:you-jobs-db
-# [END all]
+  scenario "should display a list of cats" do
+    visit root_path
 
+    expect(page).to have_content "Ms. Paws\t2"
+    expect(page).to have_content "Mr. Whiskers\t4"
+  end
+end

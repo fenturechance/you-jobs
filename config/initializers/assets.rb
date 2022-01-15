@@ -12,19 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START all]
-# [START step_2]
-# [START step_1]
-entrypoint: bundle exec rackup --port $PORT
-env: flex
-runtime: ruby
-# [END step_1]
+# Be sure to restart your server when you modify this file.
 
-env_variables:
-  SECRET_KEY_BASE: e5d30e48aeec1f26396312e442c91478493acae58f596b6d6f2005a5614479f9a19f08eebafe164498aefbaa491a1f3a65107a3c10957a537f18e64d5bbba8bb
-# [END step_2]
+# Version of your assets, change this if you want to expire all your assets.
+Rails.application.config.assets.version = "1.0"
 
-beta_settings:
-  cloud_sql_instances: you-jobs:asia-east1:you-jobs-db
-# [END all]
+# Add additional assets to the asset load path.
+# Rails.application.config.assets.paths << Emoji.images_path
 
+# Precompile additional assets.
+# application.js, application.css, and all non-JS/CSS in the app/assets
+# folder are already added.
+# Rails.application.config.assets.precompile += %w( admin.js admin.css )

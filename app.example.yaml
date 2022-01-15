@@ -21,10 +21,10 @@ runtime: ruby
 # [END step_1]
 
 env_variables:
-  SECRET_KEY_BASE: e5d30e48aeec1f26396312e442c91478493acae58f596b6d6f2005a5614479f9a19f08eebafe164498aefbaa491a1f3a65107a3c10957a537f18e64d5bbba8bb
+  SECRET_KEY_BASE: [SECRET_KEY]
 # [END step_2]
 
 beta_settings:
-  cloud_sql_instances: you-jobs:asia-east1:you-jobs-db
+  cloud_sql_instances: [YOUR_INSTANCE_CONNECTION_NAME]
 # [END all]
 

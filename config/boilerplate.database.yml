@@ -13,18 +13,29 @@
 # limitations under the License.
 
 # [START all]
-# [START step_2]
-# [START step_1]
-entrypoint: bundle exec rackup --port $PORT
-env: flex
-runtime: ruby
-# [END step_1]
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 
-env_variables:
-  SECRET_KEY_BASE: e5d30e48aeec1f26396312e442c91478493acae58f596b6d6f2005a5614479f9a19f08eebafe164498aefbaa491a1f3a65107a3c10957a537f18e64d5bbba8bb
-# [END step_2]
+development:
+  <<: *default
+  database: db/development.sqlite3
 
-beta_settings:
-  cloud_sql_instances: you-jobs:asia-east1:you-jobs-db
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
 # [END all]
-

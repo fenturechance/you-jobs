@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START all]
-# [START step_2]
-# [START step_1]
-entrypoint: bundle exec rackup --port $PORT
-env: flex
-runtime: ruby
-# [END step_1]
+require "rails_helper"
 
-env_variables:
-  SECRET_KEY_BASE: e5d30e48aeec1f26396312e442c91478493acae58f596b6d6f2005a5614479f9a19f08eebafe164498aefbaa491a1f3a65107a3c10957a537f18e64d5bbba8bb
-# [END step_2]
+RSpec.describe "cats/edit", type: :view do
+  before :each do
+    @cat = assign(
+      :cat, Cat.create!(name: "Mr. Whiskers", age: 4)
+    )
+  end
 
-beta_settings:
-  cloud_sql_instances: you-jobs:asia-east1:you-jobs-db
-# [END all]
+  it "renders the edit cat form" do
+    render
 
+    assert_select "form[action=?][method=?]", cat_path(@cat), "post" do
+      assert_select "input#cat_name[name=?]", "cat[name]"
+
+      assert_select "input#cat_age[name=?]", "cat[age]"
+    end
+  end
+end

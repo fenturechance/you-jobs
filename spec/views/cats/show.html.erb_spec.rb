@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2017 Google, Inc
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START gae_standard_quickstart]
-require "sinatra"
+require "rails_helper"
 
-get "/" do
-  "Hello world! ya"
+RSpec.describe "cats/show", type: :view do
+  before :each do
+    @cat = assign(
+      :cat, Cat.create!(name: "Ms. Paws", age: 2)
+    )
+  end
+
+  it "renders attributes in <p>" do
+    render
+    expect(rendered).to match(/Ms. Paws/)
+    expect(rendered).to match(/2/)
+  end
 end
-# [END gae_standard_quickstart]
