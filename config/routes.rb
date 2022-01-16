@@ -14,6 +14,23 @@
 
 # [START cat_routes]
 Rails.application.routes.draw do
+  resources :jobs
+  get 'jobs/index'
+
+  get 'jobs/show'
+
+  get 'jobs/new'
+
+  get 'jobs/edit'
+  resources :companies
+  get 'companies/index'
+
+  get 'companies/show'
+
+  get 'companies/new'
+
+  get 'companies/edit'
+
   resources :cats
   get "cats/index"
 
@@ -25,6 +42,22 @@ end
 =begin
 # [START boilerplate]
 Rails.application.routes.draw do
+  get 'jobs/index'
+
+  get 'jobs/show'
+
+  get 'jobs/new'
+
+  get 'jobs/edit'
+
+  get 'companies/index'
+
+  get 'companies/show'
+
+  get 'companies/new'
+
+  get 'companies/edit'
+
   resources :cats
   get 'cats/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

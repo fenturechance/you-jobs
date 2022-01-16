@@ -1,0 +1,15 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :companyName %>
+    <%= form.text_field :companyName, id: :companyName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :companyProfile %>
+    <%= form.text_field :companyProfile, id: :companyProfile %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
