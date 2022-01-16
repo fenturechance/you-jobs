@@ -28,9 +28,20 @@ a {
     background-color: transparent !important;
   }
 }
+.m-auto {
+  margin: auto;
+}
+.max-w-md {
+  max-width: 960px;
+}
 .justify-between {
   justify-content: space-between;
 }
+
+.justify-center {
+  justify-content: center;
+}
+
 .items-center {
   align-items: center;
 }
@@ -43,5 +54,25 @@ a {
   a {
     color: $white !important;
     text-decoration: none;   
+  }
+}
+.editForm {
+  label {
+    color: $lightGrey;
+    margin-bottom: 10px;
+  }
+  input[type="text"] {
+    border: 1px solid $borderBlack;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+  }
+  input[type="submit"] {
+    background-color: $btnBlue;
+    color: $white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100px;
   }
 }

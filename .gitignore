@@ -2,3 +2,4 @@ config/database.yml
 app.yaml
 tmp
 log
+db/development.sqlite3

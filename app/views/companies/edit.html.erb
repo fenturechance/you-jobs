@@ -1,6 +1,6 @@
-<h1>Editing Company</h1>
+<h1 class="mb-20"><%= @company.companyName %></h1>
 
 <%= render 'form', company: @company %>
 
-<%= link_to 'Show', @company %> |
-<%= link_to 'Back', companies_path %>
+<!-- <%= link_to 'Show', companies_show_admin_path(@company) %> | -->  
+<%= link_to 'Back', admin_path %>

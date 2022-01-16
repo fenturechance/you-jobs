@@ -1,15 +1,32 @@
-<%= form_with(model: company, local: true) do |form| %>
+<%= form_with(model: company, local: true, html: {class: 'editForm' })  do |form|%>
+  <% if @isNew %>
   <div class="field">
-    <%= form.label :companyName %>
+    <%= form.label :公司名稱 %>
     <%= form.text_field :companyName, id: :companyName %>
   </div>
+  <% end %>
 
   <div class="field">
-    <%= form.label :companyProfile %>
+    <%= form.label :公司介紹 %>
     <%= form.text_field :companyProfile, id: :companyProfile %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <%= form.label :公司理念 %>
+    <%= form.text_field :companyPhilosophy, id: :companyPhilosophy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :媒體報導 %>
+    <%= form.text_field :mediaReports, id: :mediaReports %>
+  </div>
+
+  <div class="field">
+    <%= form.label :薪資福利 %>
+    <%= form.text_field :salaryAndBenefits, id: :salaryAndBenefits %>
+  </div>
+
+  <div class="actions flex justify-center">
+    <%= form.submit "存檔" %>
   </div>
 <% end %>
