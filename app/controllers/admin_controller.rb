@@ -1,5 +1,5 @@
-class CompaniesController < ApplicationController
-  before_action :set_company, only: [:show, :show_admin, :edit, :update, :destroy]
+class AdminController < ApplicationController
+  before_action :set_company, only: [:show, :edit, :update, :destroy]
   def index
     @companies = Company.all
   end
@@ -8,9 +8,6 @@ class CompaniesController < ApplicationController
   end
 
   def show
-  end
-
-  def show_admin
   end
 
   def new

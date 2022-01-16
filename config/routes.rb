@@ -14,6 +14,7 @@
 
 # [START cat_routes]
 Rails.application.routes.draw do
+  get 'admin' , to: 'admin#index'
   resources :jobs
   get 'jobs/index'
 
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   get 'jobs/edit'
 
   get 'companies/index_show' , to: 'companies#index_show'
+  get 'companies/show_admin/:id' , to: 'companies#show_admin', :as => 'companies_show_admin'
   resources :companies
   get 'companies/index'
 

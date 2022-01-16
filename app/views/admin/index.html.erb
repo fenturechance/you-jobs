@@ -1,0 +1,18 @@
+<div class="flex justify-between items-center mb-20">
+  <h1>公司列表</h1>
+  <button class="btn">
+    <%= link_to '新增公司', companies_new_path %>
+  </button>
+</div>
+<ul class="companyList">
+<% @companies.each do |company| %>
+  <li class="flex justify-between items-center">
+    <%= link_to company.companyName, company %>
+    <ul class="config flex items-center">
+      <li><%= link_to '檢視', companies_show_admin_path(company) %></li>
+      <li><%= link_to '編輯', edit_company_path(company) %></li>
+      <li><%= link_to '刪除', company, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+  </li>
+<% end %>
+</ul>

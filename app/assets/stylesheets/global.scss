@@ -5,13 +5,16 @@
   list-style: none;
 }
 body {
-  background-color: $bgGrey;
+  background-color: $bgGrey !important;
 }
 .flex {
   display: flex;
 }
 .mt-10 {
   margin-top: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
 }
 .liGap {
   li + li {
@@ -27,4 +30,18 @@ a {
 }
 .justify-between {
   justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.btn {
+  background-color: $btnBlue;
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  a {
+    color: $white !important;
+    text-decoration: none;   
+  }
 }
