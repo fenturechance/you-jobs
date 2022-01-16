@@ -3,6 +3,9 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
   end
+  def index_show
+    @companies = Company.all
+  end
 
   def show
   end

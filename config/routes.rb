@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'jobs/new'
 
   get 'jobs/edit'
+
+  get 'companies/index_show' , to: 'companies#index_show'
   resources :companies
   get 'companies/index'
 
