@@ -1,0 +1,16 @@
+@import 'global.scss';
+.companyWrapper {
+  background-color: $boxGrey;
+  border: 1px solid $borderBlack;
+  padding: 20px;
+}
+.box {
+  width: 20%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $borderBlack;
+  border-radius: 10px;
+}

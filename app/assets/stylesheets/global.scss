@@ -1,0 +1,30 @@
+@import '_var.scss';
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  background-color: $bgGrey;
+}
+.flex {
+  display: flex;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.liGap {
+  li + li {
+    margin-left: 10px;
+  }
+}
+a {
+  color: $linkColor !important;
+  &:hover {
+    color: lighten($linkColor, 10%) !important;
+    background-color: transparent !important;
+  }
+}
+.justify-between {
+  justify-content: space-between;
+}
