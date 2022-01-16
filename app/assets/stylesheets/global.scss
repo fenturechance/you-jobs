@@ -10,6 +10,12 @@ body {
 .flex {
   display: flex;
 }
+.flex-grow {
+  flex-grow: 1;
+}
+.pt-10 {
+  padding-top: 10px;
+}
 .mt-10 {
   margin-top: 10px;
 }
@@ -31,8 +37,24 @@ a {
 .m-auto {
   margin: auto;
 }
+.ml-10 {
+  margin-left: 10px;
+}
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .max-w-md {
   max-width: 960px;
+}
+.text-grey {
+  color: $lightGrey;
+}
+.text-sm {
+  font-size: 14px;
+}
+.border-t {
+  border-top: 1px solid $boxGrey;
 }
 .justify-between {
   justify-content: space-between;
@@ -74,5 +96,22 @@ a {
     padding: 10px 20px;
     border-radius: 10px;
     width: 100px;
+  }
+}
+input {
+  box-sizing: border-box;
+}
+.toggleOpen {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid $borderBlack;
+  li {
+    background-color: $white;
+    padding: 2px 12px;
+    cursor: pointer;
+    &.active {
+      background-color: $btnBlue;
+      color: $white;
+    }
   }
 }

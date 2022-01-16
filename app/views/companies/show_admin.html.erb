@@ -1,5 +1,9 @@
-<h1 class="mb-20"><%= @company.companyName %></h1>
-
+<div class="flex justify-between items-center">
+  <h1 class="mb-20"><%= @company.companyName %></h1>
+  <button class="btn">
+    <%= link_to '管理公司資訊', edit_company_path(@company) %>
+  </button>
+</div>
 <table>
   <tr>
     <th>公司介紹</th>
@@ -17,11 +21,13 @@
     <th>薪資福利</th>
     <td><%= @company.salaryAndBenefits %></td>
   </tr>
-  <tr>
-    <th>目前職缺</th>
-    <td></td>
-  </tr>
 </table>
+<div class="flex justify-between items-center border-t pt-10 mt-10">
+  <h2 class="my-10 text-grey text-sm">目前職缺</h2>
+  <button class="btn">
+    <%= link_to '新增職缺', jobs_new_path(:company_id => @company.id) %>
+  </button>
+</div>
 
 <!-- link_to 'Edit', edit_company_path(@company) -->
 <%= link_to 'Back', admin_path %>

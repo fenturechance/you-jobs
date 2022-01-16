@@ -1,0 +1,42 @@
+<%= form_with(model: job, local: true, html: {class: 'editForm' })  do |form|%>
+  <div class="flex justify-between items-center">
+    <% if @isNew %>
+    <div class="field flex-grow">
+      <%= form.label :職缺名稱 %>
+      <%= form.text_field :jobTitle, id: :jobTitle %>
+    </div>
+    <% else %>
+      <p class="flex-grow"><%=  job.jobTitle %></p>
+    <% end %>
+    <div class="ml-10">
+      <span>職缺狀態</span>
+      <ul class="flex toggleOpen" id="toggleOpen">
+        <li class="active">開啟</li>
+        <li>關閉</li>
+      </ul>
+    </div>
+  </div>
+  <div class="field">
+    <%= form.label :工作內容 %>
+    <%= form.text_field :workContent, id: :workContent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :條件要求 %>
+    <%= form.text_field :conditionRequirements, id: :conditionRequirements %>
+  </div>
+
+  <div class="field">
+    <%= form.label :公司福利 %>
+    <%= form.text_field :companyBenefits, id: :companyBenefits %>
+  </div>
+
+  <div class="field">
+    <%= form.label :薪資範圍 %>
+    <%= form.text_field :salaryRange, id: :salaryRange %>
+  </div>
+
+  <div class="actions flex justify-center">
+    <%= form.submit "存檔" %>
+  </div>
+<% end %>

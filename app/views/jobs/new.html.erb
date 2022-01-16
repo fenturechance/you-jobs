@@ -1,2 +1,5 @@
-<h1>Jobs#new</h1>
-<p>Find me in app/views/jobs/new.html.erb</p>
+<h1 class="mb-20">新增<%=  @company.companyName %>的職缺</h1>
+
+<%= render 'form', job: @job %>
+
+<%= link_to 'Back', admin_path %>

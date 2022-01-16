@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsCloudsqlMysql</title>
+    <title>Simple Yourator</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -11,5 +11,6 @@
     <div class="max-w-md m-auto">
       <%= yield %>
     </div>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload'%>
   </body>
 </html>
