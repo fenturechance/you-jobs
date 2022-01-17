@@ -1,6 +1,6 @@
 <h1 class="mb-20"><%= @company.companyName %></h1>
 
-<table>
+<table class="detailTable">
   <tr>
     <th>公司介紹</th>
     <td><%= @company.companyProfile %></td>
@@ -17,11 +17,16 @@
     <th>薪資福利</th>
     <td><%= @company.salaryAndBenefits %></td>
   </tr>
-  <tr>
-    <th>目前職缺</th>
-    <td></td>
-  </tr>
 </table>
-
+<div class="flex justify-between items-center border-t pt-10 mt-10">
+  <h2 class="my-10 text-grey text-sm text-[16px]">目前職缺</h2>
+</div>
+<ul class="jobList mt-10 mb-10">
+<% @jobs.each do |job| %>
+  <li>
+    <%= link_to job.jobTitle, job %>
+  </li>
+<% end %>
+</ul>
 <!-- link_to 'Edit', edit_company_path(@company) -->
 <%= link_to 'Back', companies_path %>

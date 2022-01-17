@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
-  before_action :set_job, :set_company, only: [:show, :show_admin, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :show_admin, :edit, :update, :destroy]
   def index
-    @companies = Company.all
+    @jobs = Job.all
   end
 
   def show
@@ -29,6 +29,7 @@ class JobsController < ApplicationController
     end
   end
   def update
+    set_company
     respond_to do |format|
       if @job.update job_params_edit
         format.html { redirect_to companies_show_admin_path(@company), notice: "job was successfully updated." }

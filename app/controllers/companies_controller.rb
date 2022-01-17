@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @jobs = Job.where("company_id = ?", params[:id])
   end
 
   def show_admin

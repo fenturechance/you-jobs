@@ -1,2 +1,25 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<h1 class="mb-20"><%= @job.jobTitle %></h1> 
+<table class="detailTable">
+  <tr>
+    <th>工作內容</th>
+    <td><%= @job.workContent %></td>
+  </tr>
+  <tr>
+    <th>條件要求</th>
+    <td><%= @job.conditionRequirements %></td>
+  </tr>
+  <tr>
+    <th>公司福利</th>
+    <td><%= @job.companyBenefits %></td>
+  </tr>
+  <tr>
+    <th>薪資範圍</th>
+    <td><%= @job.salaryRange %></td>
+  </tr>
+</table>
+<div class="flex justify-center mt-20">
+  <button class="btn text-[16px]">現在應徵</button>
+</div>
+
+<!-- link_to 'Edit', edit_company_path(@company) -->
+<%= link_to 'Back', jobs_path %>

@@ -13,18 +13,33 @@ body {
 .flex-grow {
   flex-grow: 1;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .pt-10 {
   padding-top: 10px;
 }
 .mt-10 {
   margin-top: 10px;
 }
+.mt-20 {
+  margin-top: 20px;
+}
 .mb-20 {
   margin-bottom: 20px;
 }
+.w-1\/5 {
+  width: 20%;
+}
+.border-box {
+  box-sizing: border-box;
+}
 .liGap {
   li + li {
-    margin-left: 10px;
+    padding-left: 10px;
+  }
+  li:nth-child(5n + 1) {
+    padding-left: 0;
   }
 }
 a {
@@ -120,4 +135,18 @@ input {
 }
 .hidden {
   display: none;
+}
+.detailTable {
+  th, td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+  }
+  th {
+    color: $lightGrey;
+    font-size: 16px;
+  }
+}
+.text-\[16px\] {
+  font-size: 16px;
 }

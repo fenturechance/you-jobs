@@ -1,8 +1,9 @@
 <h1 class="mb-20">公司列表</h1>
-<ul class="companyList">
+<ul class="companyList mb-20">
 <% @companies.each do |company| %>
   <li>
     <%= link_to company.companyName, company %>
   </li>
 <% end %>
 </ul>
+<%= link_to 'Back', home_index_path %>
