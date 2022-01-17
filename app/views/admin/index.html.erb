@@ -7,7 +7,7 @@
 <ul class="companyList">
 <% @companies.each do |company| %>
   <li class="flex justify-between items-center">
-    <%= link_to company.companyName, company %>
+    <%= link_to company.companyName, companies_show_admin_path(company) %>
     <ul class="config flex items-center">
       <li><%= link_to '檢視', companies_show_admin_path(company) %></li>
       <li><%= link_to '編輯', edit_company_path(company) %></li>

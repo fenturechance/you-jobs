@@ -30,8 +30,19 @@
 </div>
 <ul class="jobList mt-10 mb-10">
 <% @jobs.each do |job| %>
-  <li>
+  <li class="flex justify-between items-center">
+    <span>
     <%= link_to job.jobTitle, edit_job_path(job, :company_id => @company.id) %>
+    </span>
+    <div class="flex items-center">
+      <div class="switch mr-10">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </div>
+      <div class="pr-10">
+        <%= image_tag('/trash.png', size: "20x20") %>
+      </div>
+    </div>
   </li>
 <% end %>
 </ul>
