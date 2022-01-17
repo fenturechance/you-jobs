@@ -1,5 +1,5 @@
 @import 'global.scss';
-.companyList {
+.companyList, .jobList {
   > li {
     background-color: $white;
     border: 1px solid $borderBlack;

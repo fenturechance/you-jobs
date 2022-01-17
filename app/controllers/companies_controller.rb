@@ -11,6 +11,8 @@ class CompaniesController < ApplicationController
   end
 
   def show_admin
+    @jobs = Job.where("company_id = ?", params[:id])
+    p @jobs
   end
 
   def new

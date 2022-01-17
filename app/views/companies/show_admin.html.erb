@@ -28,6 +28,13 @@
     <%= link_to '新增職缺', jobs_new_path(:company_id => @company.id) %>
   </button>
 </div>
+<ul class="jobList mt-10 mb-10">
+<% @jobs.each do |job| %>
+  <li>
+    <%= link_to job.jobTitle %>
+  </li>
+<% end %>
+</ul>
 
 <!-- link_to 'Edit', edit_company_path(@company) -->
 <%= link_to 'Back', admin_path %>

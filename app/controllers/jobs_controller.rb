@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :show_admin, :edit, :update, :destroy]
+  before_action :set_job, :set_company, only: [:show, :show_admin, :edit, :update, :destroy]
   def index
     @companies = Company.all
   end
@@ -15,11 +15,24 @@ class JobsController < ApplicationController
   def edit
     @isNew = false
   end
+  def create
+    @job = Job.new job_params
+    set_company
+    respond_to do |format|
+      if @job.save
+        format.html { redirect_to companies_show_admin_path(@company), notice: "job was successfully created." }
+        format.json { render :show, status: :created, location: @company }
+      else
+        format.html { render :new }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   def update
     respond_to do |format|
       if @job.update job_params_edit
-        format.html { redirect_to companies_show_admin_path(@job), notice: "job was successfully updated." }
-        format.json { render :show, status: :ok, location: @job }
+        format.html { redirect_to companies_show_admin_path(@company), notice: "job was successfully updated." }
+        format.json { render :show, status: :ok, location: @company }
       else
         format.html { render :edit }
         format.json { render json: @job.errors, status: :unprocessable_entity }
@@ -40,9 +53,9 @@ class JobsController < ApplicationController
     @company = Company.find params[:company_id]
   end
   def job_params
-    params.require(:job).permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open)
+    params.permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open, :company_id)
   end
   def job_params_edit
-    params.require(:job).permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open)
+    params.require(:job).permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open, :company_id)
   end
 end

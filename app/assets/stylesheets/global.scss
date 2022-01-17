@@ -40,6 +40,9 @@ a {
 .ml-10 {
   margin-left: 10px;
 }
+.mb-10 {
+  margin-bottom: 10px;
+}
 .my-10 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -114,4 +117,7 @@ input {
       color: $white;
     }
   }
+}
+.hidden {
+  display: none;
 }

@@ -9,7 +9,10 @@ const job = () => {
         toogleBtn[j].classList.remove('active');
       }
       toogleBtn[i].classList.toggle('active');
+      if(i === 0) document.getElementById('openStatus').value = true
+      else if(i === 1) document.getElementById('openStatus').value = false
     })
   }
+  document.getElementById('company_id').value = parseInt(location.search.replace('?company_id=', ''))
 }
 job()
