@@ -1,2 +1,5 @@
-<h1>Jobs#edit</h1>
-<p>Find me in app/views/jobs/edit.html.erb</p>
+<h1 class="mb-20"><%= @job.jobTitle %></h1>
+
+<%= render 'form', job: @job %>
+  
+<%= link_to 'Back', companies_show_admin_path(@company) %>

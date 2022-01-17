@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   get 'jobs/new'
 
   get 'jobs/edit'
-
+  post 'jobs/new' , to: 'jobs#create'
+  
   get 'companies/index_show' , to: 'companies#index_show'
   get 'companies/show_admin/:id' , to: 'companies#show_admin', :as => 'companies_show_admin'
   resources :companies

@@ -1,4 +1,4 @@
-<%= form_with(model: job, local: true, html: {class: 'editForm' }, url: jobs_path)  do |form|%>
+<%= form_with(model: job, local: true, html: {class: 'editForm' })  do |form|%>
   <div class="flex justify-between items-center">
     <input type="number" class="hidden" id="company_id" name="company_id">
     <% if @isNew %>
@@ -7,7 +7,7 @@
       <%= form.text_field :jobTitle, id: :jobTitle %>
     </div>
     <% else %>
-      <p class="flex-grow"><%=  job.jobTitle %></p>
+      <p class="flex-grow"></p>
     <% end %>
     <div class="ml-10">
       <span>職缺狀態</span>
@@ -15,7 +15,9 @@
         <li class="active">開啟</li>
         <li>關閉</li>
       </ul>
-      <input type="checkbox" name="open" checked="true" class="hidden" id="openStatus" value="true">
+      <div class="hidden">
+        <%= form.check_box :open, { include_hidden: false, id: :openStatus } %>
+      </div>
     </div>
   </div>
   <div class="field">

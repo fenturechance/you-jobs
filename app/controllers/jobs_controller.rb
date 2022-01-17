@@ -13,6 +13,7 @@ class JobsController < ApplicationController
   end
 
   def edit
+    set_company
     @isNew = false
   end
   def create
@@ -57,6 +58,7 @@ class JobsController < ApplicationController
     params.permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open, :company_id)
   end
   def job_params_edit
+    p params
     params.require(:job).permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open, :company_id)
   end
 end
