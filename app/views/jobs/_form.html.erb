@@ -1,6 +1,6 @@
 <%= form_with(model: job, local: true, html: {class: 'editForm' })  do |form|%>
   <div class="flex justify-between items-center">
-    <input type="number" class="hidden" id="company_id" name="company_id">
+    <%= form.number_field :company_id, id: :company_id, class: :hidden %>
     <% if @isNew %>
     <div class="field flex-grow">
       <%= form.label :職缺名稱 %>

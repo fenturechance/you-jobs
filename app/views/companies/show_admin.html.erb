@@ -43,7 +43,8 @@
       <% end %>
       </div>
       <div class="pr-10">
-        <%= image_tag('/trash.png', size: "20x20") %>
+        <%= button_to '', job, method: :delete, data: { confirm: 'Are you sure?' }, :form => { :id => "deleteform#{job.id}", :class => "hidden" }  %>
+        <%= image_tag('/trash.png', size: "20x20", id: "deletebtn#{job.id}", class: :deleteImg) %>
       </div>
     </div>
   </li>

@@ -11,7 +11,7 @@
     <ul class="config flex items-center">
       <li><%= link_to '檢視', companies_show_admin_path(company) %></li>
       <li><%= link_to '編輯', edit_company_path(company) %></li>
-      <li><%= link_to '刪除', company, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <li><%= button_to '刪除', company, method: :delete, data: { confirm: 'Are you sure?' }, class: :button %></li>
     </ul>
   </li>
 <% end %>

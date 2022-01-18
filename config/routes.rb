@@ -16,6 +16,7 @@
 Rails.application.routes.draw do
   get 'admin' , to: 'admin#index'
   resources :jobs
+  delete 'jobs/:id', to: 'jobs#destroy'
   get 'jobs/index'
 
   get 'jobs/show'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   get 'companies/index_show' , to: 'companies#index_show'
   get 'companies/show_admin/:id' , to: 'companies#show_admin', :as => 'companies_show_admin'
   resources :companies
+  delete 'companies/:id', to: 'companies#destroy'
   get 'companies/index'
 
   get 'companies/show'

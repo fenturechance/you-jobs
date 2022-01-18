@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :show_admin, :edit, :update, :destroy], except: [:set_job_open_status]
+  before_action :set_job, only: [:show, :show_admin, :edit], except: [:set_job_open_status]
   def index
     @jobs = Job.all
   end
@@ -30,7 +30,8 @@ class JobsController < ApplicationController
     end
   end
   def update
-    set_company
+    set_job
+    @company = Company.find params[:job][:company_id]
     respond_to do |format|
       if @job.update job_params_edit
         format.html { redirect_to companies_show_admin_path(@company), notice: "job was successfully updated." }
@@ -42,9 +43,11 @@ class JobsController < ApplicationController
     end
   end
   def destroy
+    @job = Job.find params[:id]
+    @company = Company.find @job[:company_id]
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to companies_url, notice: "job was successfully destroyed." }
+      format.html { redirect_to companies_show_admin_path(@company), notice: "job was successfully destroyed." }
       format.json { head :no_content }
     end
   end

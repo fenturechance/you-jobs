@@ -201,3 +201,12 @@ $circleWidth: 18px;
     }
   }
 }
+.button {
+  background-color: transparent;
+  border: none;
+  padding: 20px;
+  color: $borderBlack;
+}
+.deleteImg {
+  cursor: pointer;
+}

@@ -9,3 +9,11 @@ for (let i = 0; i < switchs.length; i++) {
     document.getElementById(`form${id}`).submit()
   })
 }
+
+const deleteImgs = document.querySelectorAll('.deleteImg')
+for (let i = 0; i < deleteImgs.length; i++) {
+  deleteImgs[i].addEventListener('click', e => {
+    const id = e.target.id.replace('deletebtn', '')
+    document.getElementById(`deleteform${id}`).submit()
+  })
+}

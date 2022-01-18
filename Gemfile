@@ -66,4 +66,6 @@ gem "mysql2", "~> 0.4.8"
 
 # Added at 2017-08-07 11:54:12 -0700 by USER:
 gem "appengine", "~> 0.4.1"
+
+gem 'turbolinks'
 # [END gems]
