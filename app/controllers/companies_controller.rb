@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @jobs = Job.where("company_id = ?", params[:id])
+    @jobs = Job.where("company_id = ?", params[:id]).where(open: true)
   end
 
   def show_admin

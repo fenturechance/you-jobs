@@ -1,6 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-const job = () => {
+var jobFun = () => {
   if(!location.pathname.includes('jobs')) return
   const toogleBtn = document.querySelectorAll("#toggleOpen li");
   if(document.getElementById('openStatus').checked !== true) {
@@ -26,4 +26,4 @@ const job = () => {
   }
   document.getElementById('company_id').value = parseInt(location.search.replace('?company_id=', ''))
 }
-job()
+jobFun()

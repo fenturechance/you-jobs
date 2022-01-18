@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :show_admin, :edit], except: [:set_job_open_status]
   def index
-    @jobs = Job.all
+    @jobs = Job.where(open: true).all
   end
 
   def show
