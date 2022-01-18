@@ -36,8 +36,11 @@
     </span>
     <div class="flex items-center">
       <div class="switch mr-10">
-        <input type="checkbox">
-        <span class="slider"></span>
+      <%= form_with(model: job, method: :post, url: set_job_open_status_path ,local: true, html: { id: "form#{job.id}" })  do |form|%>
+          <input type="hidden" name="job[id]" value="<%= job.id %>">
+          <%= form.check_box :open, { include_hidden: false, id: "checkbox#{job.id}" } %>
+          <label class="slider" for="checkbox<%= job.id %>"></label>
+      <% end %>
       </div>
       <div class="pr-10">
         <%= image_tag('/trash.png', size: "20x20") %>

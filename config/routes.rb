@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   get 'jobs/edit'
   post 'jobs/new' , to: 'jobs#create'
+  post 'jobs/set_job_open_status' , to: 'jobs#set_job_open_status', :as => 'set_job_open_status'
   
   get 'companies/index_show' , to: 'companies#index_show'
   get 'companies/show_admin/:id' , to: 'companies#show_admin', :as => 'companies_show_admin'

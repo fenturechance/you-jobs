@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :show_admin, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :show_admin, :edit, :update, :destroy], except: [:set_job_open_status]
   def index
     @jobs = Job.all
   end
@@ -58,7 +58,10 @@ class JobsController < ApplicationController
     params.permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open, :company_id)
   end
   def job_params_edit
-    p params
     params.require(:job).permit(:jobTitle, :workContent, :conditionRequirements, :companyBenefits, :salaryRange, :open, :company_id)
+  end
+  def set_job_open_status
+    @job = Job.find params[:job][:id]
+    @job.update(open: params[:job][:open])
   end
 end

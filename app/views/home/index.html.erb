@@ -17,7 +17,7 @@
       <h2>精選職缺</h2>
       <%= link_to '更多職缺', jobs_path %>
     </div>
-    <ul class="flex mt-10 liGap">
+    <ul class="flex mt-10 liGap flex-wrap">
       <% @jobs.each do |job| %>
       <li class="mb-10 w-1/5 border-box">
         <div class="box"><%= job.jobTitle %></div>

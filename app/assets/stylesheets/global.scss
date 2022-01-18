@@ -168,13 +168,13 @@ $circleWidth: 18px;
   input { 
     display: none;
     &:checked + .slider {
-      background-color: #2196F3;
+      background-color: #88bf57;
+      &:before {
+        transform: translateX(0);
+      }
     }
     &:focus + .slider {
-      box-shadow: 0 0 1px #2196F3;
-    }
-    &:checked + .slider:before {
-      transform: translateX(26px);
+      box-shadow: 0 0 1px #88bf57;
     }
   }
   .slider {
@@ -184,10 +184,11 @@ $circleWidth: 18px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #eb7162;
     transition: .4s;
     border-radius: $height;
     &::before {
+      transform: translateX($width / 2 - 5);
       border-radius: 50%;
       position: absolute;
       content: "";
